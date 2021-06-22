@@ -1,0 +1,108 @@
+----------------------------------------------------------------------
+Notas curso php web services
+----------------------------------------------------------------------
+
+Cabeceras HTTP pegarle una mirada.
+
+Las cabeceras que comienzan con X- por convencion son de usuario.
+
+Api REST
+
+Permite tener un procedimiento corriendo en forma remota, y poder 
+accederlo en cualquier momento.
+
+Promueve el desacople entre servicios.
+
+Formato JSON Javascript Object Notation.
+Fue implementado hace unos Cerca del 2008 se empezo a utilizar
+este formato.
+
+Para pensar
+
+Un servicio puede retornar
+
+Ancho fijo: 1111345651-1513513-135135135611
+csv: Comma Separated Value: 1111;3;45651-1513513-135135135;611
+XML: https://es.wikipedia.org/wiki/Extensible_Markup_Language
+JSON: 
+
+{
+  "departamento":8,
+  "nombredepto":"Ventas",
+
+  "director": "Juan Rodríguez",
+  "empleados":[
+    {
+      "nombre":"Pedro",
+      "apellido":"Fernández"
+    },{
+      "nombre":"Jacinto",
+      "apellido":"Benavente"
+    } 
+  ]
+}
+
+Lo mas basico que vamos a ver es CRUD
+
+CREATE 
+READ 
+UPDATE
+DELETE
+
+Cada una de estas acciones, esta ligada a un verbo HTTP
+
+GET Leer informacion
+POST crear nueva informacion
+PUT Modificar informacion
+DELETE Borrar informacion
+
+Como es la sintaxis de API REST
+
+Vamos a tomar como ejemplo una estructura "curso".
+
+GET host/cursos.php/{id} 
+- Esto me trae los datos para este id
+
+GET host/cursos.php?nombre=api web service&fecha=20210622
+- Esto me retorna un array con todo lo encontrado o un array vacio
+  [] si no encontro nada.
+
+POST host/cursos.php
+- Este requiere un body con aquellos datos que quiero crear
+  ejemplo:
+
+  {
+     "datosTarjeta": {
+	 "frente": "ANDRES MARI VAZQUEZ",
+	 "numero": "4546-3513-1545-1111",
+	 "cvv": "165"
+     }
+ }
+
+PUT host/cursos.php/{id}
+  {
+     "datosTarjeta": {
+	 "frente": "ANDRES MARI VAZQUEZ",
+	 "numero": "4546-3513-1545-1111",
+	 "cvv": "165"
+     }
+ }
+
+DELETE host/cursos.php/{id}
+
+----------------------------------------------------------------------
+Crear un servicio que tengo un get y que me retorna unos datos
+inventados o fake para poder hacer pruebas.
+
+
+
+
+
+
+
+
+
+
+
+
+
